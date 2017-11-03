@@ -1,0 +1,196 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+html {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,d6f48d+99 */
+  background: white;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #d6f48d 99%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, white 0%, #d6f48d 99%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, white 0%, #d6f48d 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d6f48d', GradientType=0);
+  /* IE6-9 */
+
+}
+/**
+ * ************************************
+ * Sobrescritura de clases de bootstrap
+ * ************************************
+ */
+
+.container-fluid {
+  padding: 0 !important;
+}
+.navbar-default {
+  background-color: #bcfd67;
+  border-color: #82af4c;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #273303 !important;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  background-color: #abe65e;
+  color: #273303;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  background-color: #abe65e;
+  color: #273303;
+}
+.panel-default {
+  border-color: #9ccd71;
+}
+.panel-default > .panel-heading {
+  color: #273303;
+  background-color: #9ccd71;
+  border-color: #69a038;
+  font-weight: bold;
+}
+.form-control {
+  background-color: #ebffcf;
+  color: #273303;
+  font-weight: bold;
+}
+.btn-default {
+  background-color: #9ccd71;
+  border-color: #273303;
+  color: #273303;
+  font-weight: bold;
+}
+.btn-default:hover {
+  background-color: #5d893c;
+  border-color: #273303;
+  color: #273303;
+}
+/**
+ * *******************
+ * ESTILOS PROPIOS ***
+ * *******************
+ */
+
+.header-title {
+  display: inline-block;
+  height: 7rem;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 89.5%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bdff68+0,a2ea35+100 */
+  background: #bdff68;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #bdff68 0%, #a2ea35 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #bdff68 0%, #a2ea35 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #bdff68 0%, #a2ea35 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdff68', endColorstr='#a2ea35', GradientType=0);
+  /* IE6-9 */
+
+}
+.header-title h1 {
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+}
+.header-logo {
+  display: inline-block;
+  height: 7rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: top;
+  width: 10%;
+  min-width: 100px;
+}
+.header-logo img {
+  margin-top: 0.5rem;
+  width: 90px;
+}
+/**
+ * *************
+ * *** LOGIN ***
+ * *************
+ */
+
+#pdv-login {
+  display: none;
+}
+.pdv-login-cont {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  margin-top: 10rem;
+  position: relative;
+  padding: 20px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d1f477+0,d1f477+52,97cc37+100 */
+  background: #d1f477;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d1f477 0%, #d1f477 52%, #97cc37 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d1f477 0%, #d1f477 52%, #97cc37 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d1f477 0%, #d1f477 52%, #97cc37 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1f477', endColorstr='#97cc37', GradientType=0);
+  /* IE6-9 */
+
+}
+.pdv-login-cont h2 {
+  background-color: #5d893c;
+  color: white;
+  font-weight: bold;
+  left: 25%;
+  letter-spacing: 10px;
+  margin: 0;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  top: -40px;
+  width: 50%;
+}
+.pdv-login-cont .pdv-login-bg2 {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+#pdv-content {
+  padding: 0.3rem 2rem;
+}
+.title-section h3 {
+  color: #273303;
+  font-weight: bold;
+}
+.title-section hr {
+  width: 60%;
+}
+.pdv-panel-pcs ::placeholder {
+  color: #9ccd71;
+}
+.pdv-panel-img {
+  text-align: center;
+}
+.pdv-panel-img img {
+  width: 50%;
+}
+.produc-desc {
+  background-color: #ebffcf;
+  border: 1px solid #9ccd71;
+  color: #9ccd71;
+  font-weight: bold;
+  height: 6rem;
+  padding: 1rem;
+  width: 100%;
+}
+/**
+ * ********
+ * MIXINS *
+ * ********
+ */
