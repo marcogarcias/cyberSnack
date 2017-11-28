@@ -29,14 +29,16 @@ $src=__DIR__.'/src';
       <div id="pdv-login" class="col-md-12">
         <div class="pdv-login-cont col-md-4 col-md-offset-4">
           <h2>LOGIN</h2>
-          <form class="pdv-login-bg2">
+          <form id="form_login" class="pdv-login-bg2">
             <div class="form-group">
               <input type="text" class="form-control" id="nick" placeholder="Nick">
+              <p id="error_nick" class="help-block"></p>
             </div>
             <div class="form-group">
               <input type="password" class="form-control" id="password" placeholder="Contraseña">
+              <p id="error_password" class="help-block"></p>
             </div>
-            <button type="submit" class="btn btn-default">Acceder</button>
+            <button type="submit" id="btn-login" class="btn btn-default">Acceder</button>
           </form>
         </div>
       </div>
@@ -46,6 +48,7 @@ $src=__DIR__.'/src';
 <script type="text/javascript" src="./src/libs/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="./src/libs/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./src/js/Cyber.js?<?php echo time(); ?>"></script>
+<script type="text/javascript" src="./src/js/Form.js?<?php echo time(); ?>"></script>
 <script>
 $(document).ready(function(){
   Cyber.onLogin();

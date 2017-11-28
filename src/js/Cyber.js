@@ -6,6 +6,14 @@ var Cyber={
 
   onLogin: function(){
     $('#pdv-login').fadeIn(1000);
+    // validar formulario
+    var rules={
+      'nick': {'req':true, 'min':3, 'max':50},
+      'password': {'req':true, 'min':3, 'max':50}
+    };
+    uForm.validForm('#form_login', '#btn-login', rules, function(res){
+      res && $('#form_login').submit();
+    });
   },
   initNavBar: function(){
     var this_ = this;
@@ -93,11 +101,97 @@ var Cyber={
   },
   usuarios: function(){
     console.log('[ usuarios ]');
+    var this_=this;
+    $.ajax({
+      url: this_.srcHtml+"usuarios.php", 
+      success: function(res){
+        $("#pdv-content").empty().html(res);
+      }
+    });
   },
   perfil: function(){
     console.log('[ perfil ]');
   },
   logout: function(){
     console.log('[ logout ]');
+  },
+  /**
+   * Carga de forma dinámica por medio de ajax un script
+   * @param  {[type]} src      [dirección del script]
+   * @param  {[type]} callback [acción que se ejecutará al cargarse el script]
+   * @return {[type]}          [description]
+   */
+  loadScript: function(src, callback){
+    $.getScript(src)
+      .done(function(script, status) {
+        (typeof callback !== 'undefined' && jQuery.isFunction(callback)) &&
+          callback(script, status);
+      })
+      .fail(function(jqxhr, settings, exception) {
+        (typeof callback !== 'undefined' && jQuery.isFunction(callback)) &&
+          (console.log('Auch!! error al cargar el script '+src+'.', jqxhr, settings, exception));
+    });
+  },
+  /**
+   * Manejo de notificaciones
+   * https://github.com/CodeSeven/toastr
+   * @param  {[type]} cfg   [description]
+   * @return {[type]}       [description]
+   */
+  loadToastr: function(cfg){
+    cfg = cfg || {};
+    var title = cfg.title || false,
+        msg = cfg.msg || '',
+        ty = cfg.type || 'success',
+        closeButton = cfg.closeButton || false,
+        progressBar = cfg.progressBar || false,
+        positionClass = cfg.positionClass || 'toast-top-center',
+        preventDuplicates = cfg.preventDuplicates || false,
+        onclick = cfg.onclick || null,
+        showDuration = cfg.showDuration || '300',
+        hideDuration = cfg.hideDuration || '1000',
+        timeOut = cfg.timeOut || '5000',
+        extendedTimeOut = cfg.extendedTimeOut || '1000',
+        showEasing = cfg.showEasing || 'swing',
+        hideEasing = cfg.hideEasing || 'linear',
+        showMethod = cfg.showMethod || 'fadeIn',
+        hideMethod = cfg.hideMethod || 'fadeOut';
+
+    toastr.options = {
+      "closeButton": closeButton,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": progressBar,
+      "positionClass": positionClass,
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": showDuration,
+      "hideDuration": hideDuration,
+      "timeOut": timeOut,
+      "extendedTimeOut": extendedTimeOut,
+      "showEasing": showEasing,
+      "hideEasing": hideEasing,
+      "showMethod": showMethod,
+      "hideMethod": hideMethod
+    }
+    // lanzando notificación
+    title ? toastr[ty](msg, title):toastr[ty](msg);
+  },
+  loadNotif: function(cfg, callback){
+    cfg=cfg||{};
+    var cfg_={
+      title: cfg.title||null,
+      text: cfg.msg||null,
+      icon: cfg.type||"success"
+    };
+    cfg.button && (cfg_.button=cfg.button);
+    cfg.buttons && (cfg_.buttons=cfg.buttons);
+
+    swal(cfg_).then((value) => {
+      if(value){
+        (typeof callback !== 'undefined' && jQuery.isFunction(callback)) &&
+          callback(value);
+      }
+    });;
   },
 };

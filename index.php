@@ -8,6 +8,7 @@ $src=__DIR__.'/src';
   <title>CYBERSNACK - Punto de venta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./src/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./src/libs/toastr/toastr.min.css">
   <link rel="stylesheet" href="./src/css/styles.css?<?php echo time(); ?>">
 </head>
 <body>
@@ -92,11 +93,7 @@ $src=__DIR__.'/src';
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        <div id="inv-modal-cont"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
+        <div id="inv-modal-cont"><button type="submit" id="btn-aceptar-modal" class="btn btn-default">Acceder</button></div>
       </div>
     </div>
   </div>
@@ -104,7 +101,10 @@ $src=__DIR__.'/src';
 
 <script type="text/javascript" src="./src/libs/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="./src/libs/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./src/libs/toastr/toastr.min.js?<?php echo time(); ?>"></script>
+<script type="text/javascript" src="./src/libs/sweetalert/sweetalert.min.js?<?php echo time(); ?>"></script>
 <script type="text/javascript" src="./src/js/Cyber.js?<?php echo time(); ?>"></script>
+<script type="text/javascript" src="./src/js/Form.js?<?php echo time(); ?>"></script>
 <script>
 $(document).ready(function(){
   Cyber.init();
